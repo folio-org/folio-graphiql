@@ -39,7 +39,7 @@ To see the titles and alternative titles of many records, set the GraphQL query 
 ```
 query {
   instance_storage_instances {
-  	totalRecords
+    totalRecords
     instances {
       id title alternativeTitles
     }
