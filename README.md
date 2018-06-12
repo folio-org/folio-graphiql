@@ -66,23 +66,15 @@ When you press the play button, you should see something like:
         [...]
 ```
 
-### Using variables
+### Specifying parameters
 
-In many GraphQL calls, you will also want to provide values for variables: for example you could pass a CQL string called `query` in the previous example to specify which particular records you want to see. Or to fetch information about a single record, you will need to specify its ID as a value for the `id` variable. For this to work, you need to declare in the `query` header which variables you're going to use.
+In many GraphQL calls, you will also want to provide values for parameters: for example you could pass a CQL string called `query` in the previous example to specify which particular records you want to see. Or to fetch information about a single record, you will need to specify its ID as a value for the `instanceId` parameter. To see record `69640328-788e-43fc-9c3c-af39e243f3b7`, set the GraphQL query to:
 
-To see record `69640328-788e-43fc-9c3c-af39e243f3b7`, set the GraphQL query to:
 ```
-query ($id:String!)
-{
-  instance_storage_instances_SINGLE(instanceId: $id) {
+query {
+  instance_storage_instances_SINGLE(instanceId: "69640328-788e-43fc-9c3c-af39e243f3b7") {
     title
   }
-}
-```
-And the query variables to
-```
-{
-  "id": "69640328-788e-43fc-9c3c-af39e243f3b7"
 }
 ```
 When you press the play button, you should see something like:
@@ -95,3 +87,21 @@ When you press the play button, you should see something like:
   }
 }
 ```
+
+### Using variables
+
+Often, insteaad of hardwiring parameter values into your GraphQL query, you will want to provide them separately, as the values of _variables_ which get plugged into the query. For this to work, you need to declare which variables you're going to use and what their types are, which you do in a parenthesized list after the `query` header. So to run the previous query using a variable, set the GraphQL query to:
+```
+query ($id:String!) {
+  instance_storage_instances_SINGLE(instanceId: $id) {
+    title
+  }
+}
+```
+And the query variables (at bottom left on the page) to:
+```
+{
+  "id": "69640328-788e-43fc-9c3c-af39e243f3b7"
+}
+```
+When you press the play button, you should see the same result as before.
