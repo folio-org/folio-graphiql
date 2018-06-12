@@ -27,3 +27,33 @@ yarn build
 ```
 
 If you would like to change the default Okapi URL in the login form or the text that first populates GraphiQL's query box, that is currently conspicuously hardcoded in [src/App.js](src/App.js).
+
+## Using `folio-graphiql`
+
+The GraphQL syntax can be a bit verbose and not as intuitive as one might hope. This is best demonstrated by examples.
+
+To fetch information about a specific instance, set the GraphQL query to:
+```
+query ($id:String!)
+{
+  instance_storage_instances_SINGLE(instanceId: $id) {
+    title
+  }
+}
+```
+And the query variables to
+```
+{
+  "id": "69640328-788e-43fc-9c3c-af39e243f3b7"
+}
+```
+When you press the play button, you should see something like:
+```
+{
+  "data": {
+    "instance_storage_instances_SINGLE": {
+      "title": "ABA Journal"
+    }
+  }
+}
+```
