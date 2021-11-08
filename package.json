@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "graphiql": "^0.11.11",
+    "graphiql": "^1.4.7",
     "graphql": "^0.13.2",
     "lodash": "^4.17.21",
     "prop-types": "^15.6.1",
