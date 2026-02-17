@@ -15,6 +15,8 @@ Built with [create-react-app](https://github.com/facebook/create-react-app), thi
 
 This app is not longer maintained.
 
+A similar GUI to GraphQL is now served by [mod-graphql](https://github.com/folio-org/mod-graphql) itself from its WSAPI root.
+
 ## Installation
 
 Before running, you must install dependencies:
