@@ -11,6 +11,14 @@ A simple webapp that lets you authenticate to Okapi and use [GraphiQL](https://g
 
 Built with [create-react-app](https://github.com/facebook/create-react-app), this is a typical React/Webpack app that requires `nodejs` and `yarn` (or `npm`, probably).
 
+## DEPRECATED
+
+This app is not longer maintained.
+
+A similar GUI to GraphQL is now served by [mod-graphql](https://github.com/folio-org/mod-graphql) itself from its WSAPI root.
+
+## Installation
+
 Before running, you must install dependencies:
 ```
 yarn install
